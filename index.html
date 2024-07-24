@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore facere quasi fugiat consectetur enim! Excepturi porro laudantium, placeat temporibus, 
+        laboriosam, asperiores quisquam ducimus autem accusamus voluptate ex unde aspernatur eaque.</p>
+    <script>        
+        // longest word in a string
+        let str="Hello my dear friends";
+        let arr=str.split(' ');
+        let longestword=arr[0];
+        for(let i=0;i<arr.length;i++){
+            if(arr[i].length>longestword.length){
+                longestword=arr[i];
+            }
+            else{
+                continue;
+            }
+        }
+        console.log(longestword);
+
+
+        // Non repeating character in a string
+        function character(str){
+            let arr=str.split('');
+            let flag=0;
+            let char=arr[0];
+            for(i=0;i<arr.length;i++){
+                for(j=i+1;j<arr.length;j++){
+                    if(arr[i]!=arr[j]){
+                        char=arr[i];
+                        flag=1;
+                        break;
+                    }
+                }
+                if(flag==1){
+                    break;
+                }
+                else{
+                    continue;
+                }
+            }
+            return char;
+        }
+        console.log(character("helloworld"));
+
+
+        // Majority element in an array
+        function majority(arr){
+            let count=0;
+            let maj=0;
+            let majority=arr[0]
+            for(i=0;i<arr.length;i++){
+                count=0;
+                for(j=i+1;j<arr.length;j++){
+                    if(arr[i]==arr[j])
+                    {
+                        count+=1;
+                    }
+                    else{
+                        continue;
+                    }
+                }
+                if(count>maj){
+                    maj=count;
+                    majority=arr[i];
+                }
+            }
+            return majority;
+        }
+        let array=[34,78,34,65,85,34,98]
+        console.log(majority(array))
+
+
+
+
+        //Rotating an array
+        function rotation(arr){
+            let n=3;
+            let arr1=arr.slice(n).concat(arr.slice(0,n))
+            return arr1
+        }
+        let arr1=[1,2,3,4,5]
+        console.log(rotation(arr1))
+
+        // includes() method
+        function incl(arr){
+            let a=arr.includes(47)
+            return a;
+
+        }
+        let arr2=[34,98,56,47,16,97,39];
+        console.log(incl(arr2));
+
+
+        // Spread Operator
+        function spread(arr, arr1){
+            let arr2=[...arr, ...arr1];
+            return arr2
+        }
+        let arr3=[23,54,76,98,46,13]
+        let arr4=[92,83,74,65,19,20]
+        console.log(spread(arr3,arr4))
+    </script>
+</body>
+</html>
